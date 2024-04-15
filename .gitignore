@@ -1,6 +1,7 @@
 # Folders
 plots/
 outputs/
+saved/
 
 # Camera calibrations
 calibration.yaml

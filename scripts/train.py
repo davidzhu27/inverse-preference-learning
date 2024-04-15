@@ -16,7 +16,7 @@ def try_wandb_setup(path, config):
         wandb.init(
             project=os.path.basename(project_dir),
             name=os.path.basename(path),
-            config=config.flatten(separator="-"),
+            config=config.flatten(),
             dir=os.path.join(os.path.dirname(project_dir), "wandb"),
         )
 

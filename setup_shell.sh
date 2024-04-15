@@ -1,9 +1,9 @@
 # Make sure we have the conda environment set up.
-CONDA_PATH=~/miniconda3/bin/activate
+CONDA_PATH=~/anaconda3/bin/activate
 ENV_NAME=ipl
-REPO_PATH=path/to/repository
+REPO_PATH=.
 USE_MUJOCO_PY=true
-WANDB_API_KEY="" # If you want to use wandb, set this to your API key.
+WANDB_API_KEY="5aea10f08e11ddde2eb1d67ad3e1e2f76dcab5bb" # If you want to use wandb, set this to your API key.
 
 # Setup Conda
 source $CONDA_PATH
@@ -11,7 +11,7 @@ conda activate $ENV_NAME
 cd $REPO_PATH
 unset DISPLAY # Make sure display is not set or it will prevent scripts from running in headless mode.
 
-if $WANDB_API_KEY; then
+if [ ! -z "$WANDB_API_KEY" ]; then
     export WANDB_API_KEY=$WANDB_API_KEY
 fi
 
