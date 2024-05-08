@@ -116,7 +116,7 @@ def eval_policy(
             if terminate_on_success and (info.get("success", False) or info.get("is_success", False)):
                 done = True
         if hasattr(env, "get_normalized_score"):
-            metric_tracker.add("score", env.get_normalized_score(ep_reward))
+            metric_tracker.add("score", 100.0*env.get_normalized_score(ep_reward))
 
         if save_gif:
             gif_name = "vis-{}_ep-{}.gif".format(step, i)

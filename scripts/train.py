@@ -14,8 +14,8 @@ def try_wandb_setup(path, config):
             return
         project_dir = os.path.dirname(os.path.dirname(__file__))
         wandb.init(
-            project=os.path.basename(project_dir),
-            name=os.path.basename(path),
+            project="Experiments_CORL",
+            name=f"ipl-{os.path.basename(path)}",
             config=config.flatten(),
             dir=os.path.join(os.path.dirname(project_dir), "wandb"),
         )
